@@ -29,6 +29,9 @@ Route::group(['middleware' => 'App\Http\Middleware\AuthenticateDirectAcess'], fu
         Route::match(['get', 'post'], '/dashboard', 'DashboardController@index')->name('dashboard');
         
     });*/
+    Route::get('/', function () {
+    return view('home');
+});
 
 Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard');
 Route::get('/register',[RegisterController::class,'index'])->name('register');
@@ -63,9 +66,7 @@ Route::post('/posts/{post:id}/likes',[PostLikeController::class,'store'])->name(
 Route::delete('/posts/{post:id}/likes',[PostLikeController::class,'destroy'])->name('posts.likes');
 
 
-Route::get('/home', function () {
-    return view('home');
-});
+
 
 //Shopping Products Routes
 Route::get('shop', [CartController::class,'shop'])->name('shop');
