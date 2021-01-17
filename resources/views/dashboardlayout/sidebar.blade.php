@@ -107,13 +107,7 @@
                   </p>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                @if(Auth::user()->usertype == 'admin') 
-                     @foreach($notifications as $notification)
-                        <a class="dropdown-item" href="#">{{ $notification->notifiable_id }}</a>
-                      @endforeach()
-                    @else
-                         <a class="dropdown-item" href="#">No notifications</a>
-                  @endif
+                
                 </div>
               </li>
               
